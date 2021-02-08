@@ -1,6 +1,9 @@
 /* |=|=|=|=|= Global |=|=|=|=|= */
 :root {
   --dark-blue: #363f5f;
+  --green: #49AA26;
+  --light-green: #3dd705;
+  --red: #e92929;
 }
 
 * {
@@ -47,12 +50,47 @@ h2 {
 
 /* |=|=|=|=|= Links and Buttons |=|=|=|=|= */
 a {
-  color: #49AA26;
+  color: var(--green);
   text-decoration: none;
 }
 
 a:hover {
-  color: #3dd705;
+  color: var(--light-green);
+}
+
+button {
+  width: 47%;
+  height: 50px;
+
+  border: none;
+
+  color: white;
+  background: var(--green);
+
+  border-radius: 0.35rem;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--light-green);
+}
+
+.button.cancel {
+  color: var(--red);
+  border: 2px var(--red) solid;
+  border-radius: 0.35rem;
+
+  width: 47%;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button.cancel:hover {
+  opacity: 1;
 }
 
 .button.new {
@@ -110,7 +148,7 @@ header {
 }
 
 .card.total {
-  background: #49aa26;
+  background: var(--green);
   color: #ffffff;
 }
 
@@ -187,8 +225,8 @@ td.expense {
   align-items: center;
   justify-content: center;
 
-  /* opacity: 0;
-  visibility: hidden; */
+  opacity: 0;
+  visibility: hidden;
 }
 
 .modal-overlay active {
@@ -199,8 +237,45 @@ td.expense {
 .modal {
   background: #F0F2F5;
   padding: 2.4rem;
+  border-radius: 0.35rem;
 }
 
+/* |=|=|=|=|= Form |=|=|=|=|=*/
+#form {
+  max-width: 500px;
+}
+
+#form h2 {
+  margin-top: 0;
+}
+
+input {
+  border: none;
+  border-radius: 0.2rem;
+
+  padding: 0.8rem;
+
+  width: 100%;
+}
+
+.input-group {
+  margin-top: 0.8rem;
+}
+
+.input-group small {
+  opacity: 0.4;
+}
+
+.input-group.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.input-group.actions .button
+.input-group.actions button {
+  width: 48%;
+}
 
 /* |=|=|=|=|= Footer |=|=|=|=|=*/
 footer {
