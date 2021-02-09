@@ -1,6 +1,5 @@
 <img src="capa_dev_finance.png">
 
-<br />
 ## Finance web - application developed at Rocketseat Discover Marathon by Mayk Brito
 
 ### First Class - The basis of everything
