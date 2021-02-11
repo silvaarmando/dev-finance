@@ -86,6 +86,7 @@
       <a
         href="#"
         class="button new"
+        onclick="Modal.open()"
       >
         + New Transaction
       </a>
@@ -214,6 +215,7 @@
             <a 
               href="#"
               class="button cancel"
+              onclick="Modal.close()"
             >
               Cancelar
             </a>
@@ -230,5 +232,26 @@
       dev.finance$
     </p>
   </footer>
+
+  <script>
+    const Modal = {
+      open() {
+        // Abrir Model 
+        // Adicionar a class active ao modal
+        document
+          .querySelector('.modal-overlay')
+          .classList
+          .add('active')
+      },
+      close() {
+        // Fechar o modal
+        // Remover a class active do modal
+        document
+          .querySelector('.modal-overlay')
+          .classList
+          .add('active')
+      }
+    }
+  </script>
 </body>
 </html>
