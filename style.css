@@ -227,14 +227,19 @@ td.expense {
 
   opacity: 0;
   visibility: hidden;
+
+  z-index: 999;
 }
 
-.modal-overlay active {
+.modal-overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
 .modal {
+  position: relative;
+  z-index: 1;
+
   background: #F0F2F5;
   padding: 2.4rem;
   border-radius: 0.35rem;
