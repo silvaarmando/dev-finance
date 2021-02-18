@@ -76,14 +76,18 @@ const Modal = {
     },
 
     innerHTMLTransaction(transaction) {
-
+      const CSSclass = transaction.amount > 0 ? "income" : "expense"
 
 
       const html = `
-      <td class="description"> 
+      <td 
+        class="description"
+      > 
         ${transaction.description}
       </td>
-      <td class="expense">
+      <td 
+        class={CSSclass}
+      >
         ${transaction.amount}
       </td>
       <td class="date">
