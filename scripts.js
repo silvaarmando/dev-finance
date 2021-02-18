@@ -28,19 +28,19 @@ const Modal = {
     {
       id: 2,
       description: 'Internet',
-      amount: 500000,
+      amount: 500001,
       date: '16/02/2021'
     },
     {
       id: 3,
       description: 'Água',
-      amount: -20000,
+      amount: -20012,
       date: '16/02/2021'
     },
     {
       id: 4,
       description: 'Site',
-      amount: 2000000,
+      amount: 200000,
       date: '16/02/2021'
     }
   ]
@@ -78,7 +78,7 @@ const Modal = {
     innerHTMLTransaction(transaction) {
       const CSSclass = transaction.amount > 0 ? "income" : "expense"
 
-
+      const amount = Utils.formatCurrency(transaction.amount)
       const html = `
       <td 
         class="description"
@@ -86,11 +86,13 @@ const Modal = {
         ${transaction.description}
       </td>
       <td 
-        class={CSSclass}
+        class=${CSSclass}
       >
-        ${transaction.amount}
+        ${amount}
       </td>
-      <td class="date">
+      <td 
+        class="date"
+      >
         ${transaction.date}
       </td>
       <td>
@@ -104,6 +106,23 @@ const Modal = {
       return html
     }
   }
+
+const Utils = {
+  formatCurrency(value) {
+    const signal = Number(value) < 0 ? "-" : ""
+
+    value = String(value).replace(/\D/g , "")
+
+    value = Number(value) / 100
+
+    value = value.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL"
+    })
+
+    return signal + value
+  }
+}
 
 transactions.forEach(function(transaction) {
   DOM.addTransaction(transaction)
