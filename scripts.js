@@ -49,61 +49,114 @@ const Modal = {
   // 2° Somar as saídas
   // 3° Subtrair das entradas o valor das saídas
   // 4° Atribuir o total
+
   const Transaction = {
-    incomes() {  
-      // Somar as entradas
+    incomes() {
+      let income = 0;
+      // Pegar todas as transações
+      // Para cada transação
+      transactions.forEach(transaction => {
+        // Se ela for maior que zero
+        if (transaction.amount > 0) {
+          // Somar a uma variavel e retornar a variavel
+          income += transaction.amount;
+        }
+      })
+
+      return income;
     },
 
     expenses() {
-      // Somar as saídas
+      let expense = 0;
+      // Pegar todas as transações
+      // Para cada transação
+      transactions.forEach(transaction => {
+        // sE ela for menor que zero
+        if (transaction.amount < 0) {
+          // Subtrair a uma variavel e retornar a variavel
+          expense += transaction.amount
+        }
+      })
+
+      return expense;
     },
 
     total() {
       // incomes - expenses
+      return Transaction.incomes() + Transaction.expenses();
     }
   }
 
   // Substituir os dados do HTML com os dados do JS.
 
-  const DOM = {
-    transactionContainer: document.querySelector('#data-table tbody'),
+const DOM = {
+  transactionContainer: document.querySelector('#data-table tbody'),
 
-    addTransaction(transaction, index) {
-      const tr = document.createElement('tr')
-      tr.innerHTML = DOM.innerHTMLTransaction(transaction)
+  addTransaction(transaction, index) {
+    const tr = document.createElement('tr')
+    tr
+      .innerHTML = DOM
+        .innerHTMLTransaction(transaction)
 
-      DOM.transactionContainer.appendChild(tr)
-    },
+    DOM
+      .transactionContainer
+        .appendChild(tr)
+  },
 
-    innerHTMLTransaction(transaction) {
-      const CSSclass = transaction.amount > 0 ? "income" : "expense"
+  innerHTMLTransaction(transaction) {
+    const CSSclass = transaction
+      .amount > 0 ? "income" : "expense"
 
-      const amount = Utils.formatCurrency(transaction.amount)
-      const html = `
-      <td 
-        class="description"
-      > 
-        ${transaction.description}
-      </td>
-      <td 
-        class=${CSSclass}
+    const amount = Utils
+      .formatCurrency(transaction.amount)
+    const html = `
+    <td 
+      class="description"
+    > 
+      ${transaction.description}
+    </td>
+    <td 
+      class=${CSSclass}
+    >
+      ${amount}
+    </td>
+    <td 
+      class="date"
+    >
+      ${transaction.date}
+    </td>
+    <td>
+      <img
+        src="./assets/minus.svg"
+        alt="Remover Transação"
       >
-        ${amount}
-      </td>
-      <td 
-        class="date"
-      >
-        ${transaction.date}
-      </td>
-      <td>
-        <img
-          src="./assets/minus.svg"
-          alt="Remover Transação"
-        >
-      </td>
-      `
+    </td>
+    `
 
-      return html
+    return html
+  },
+
+  updateBalance() {
+    document
+      .getElementById('incomeDisplay')
+      .innerHTML = Utils
+        .formatCurrency(
+          Transaction.incomes()
+        )
+
+    document
+      .getElementById('expenseDisplay')
+      .innerHTML = Utils
+        .formatCurrency(
+          Transaction.expenses()
+        )
+    
+      document
+      .getElementById('totalDisplay')
+      .innerHTML = Utils
+        .formatCurrency(
+          Transaction.total()
+        )
     }
   }
 
@@ -111,19 +164,27 @@ const Utils = {
   formatCurrency(value) {
     const signal = Number(value) < 0 ? "-" : ""
 
-    value = String(value).replace(/\D/g , "")
+    value = String(value)
+      .replace(/\D/g , "")
 
     value = Number(value) / 100
 
-    value = value.toLocaleString("pt-BR", {
-      style: "currency",
-      currency: "BRL"
+    value = value
+      .toLocaleString(
+        "pt-BR", {
+          style: "currency",
+          currency: "BRL"
     })
 
     return signal + value
   }
 }
 
-transactions.forEach(function(transaction) {
-  DOM.addTransaction(transaction)
+transactions
+  .forEach(
+    function(transaction) {
+      DOM
+        .addTransaction(transaction)
 })
+
+DOM.updateBalance()
