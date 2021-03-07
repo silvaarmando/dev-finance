@@ -91,6 +91,8 @@ button:hover {
 
 .button.cancel:hover {
   opacity: 1;
+  background: var(--red);
+  color: #ffffff;
 }
 
 .button.new {
