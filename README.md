@@ -1,8 +1,4 @@
-
-<img
-  align="center"
-  src="capa_dev_finance.png"
->
+<img src="capa_dev_finance.png">
 
 ### Application Web developed at Rocketseat Discover Marathon by Mayk Brito
 
