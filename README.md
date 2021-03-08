@@ -7,7 +7,11 @@
   >
 </h1>
 
-### Application Web developed at [Rocketseat Discover Marathon](https://maratonadiscover.rocketseat.com.br/inscricao) by [Mayk Brito](https://github.com/maykbrito). The application was developed with HTML5, CSS3 and JS Vanilla. But still subject to some changes.
+<h3
+  align="center"
+>
+  Application Web developed at <a href="https://maratonadiscover.rocketseat.com.br/inscricao">Rocketseat Discover Marathon</a> by <a href="https://github.com/maykbrito">Mayk Brito</a>. The application was developed with HTML5, CSS3 and JS Vanilla. But still subject to some changes.
+</h3>
 
 <br
 />
