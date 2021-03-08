@@ -2,7 +2,7 @@
   align="center"
 >
   <img
-    width="250px"
+    width="450px"
     src="./assets/logo.svg"
   >
 </h1>
@@ -89,9 +89,7 @@ If you are interested in accessing the original example layout of the applicatio
 
 ## TECHNOLOGIES
 
-<div
-  align="center"
->
+<div align="center">
   <span>
     <a
       href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"
@@ -151,10 +149,9 @@ If you are interested in accessing the original example layout of the applicatio
         alt="Logo da Vercel"  
       >
     </a>
-  </span>&nbsp;
+  </span>
 </div>
-<br>
-<br>
+<br/><br/<br/>
 
 ## SCREENS
 
