@@ -2,6 +2,7 @@
   align="center"
 >
   <img
+    align="center"
     width="450px"
     src="./assets/logo.svg"
   >
