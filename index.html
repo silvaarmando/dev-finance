@@ -7,6 +7,11 @@
     content="width=device-width,
     initial-scale=1.0"
   >
+  <link
+    rel="shortcut icon"
+    href="./assets/favicon-devfinance.svg"
+    type="vetor/svg"
+  >
   <title> dev.finance </title>
   <link 
     rel="stylesheet" 
@@ -28,18 +33,31 @@
       src="./assets/logo.svg"
       alt="Logo Dev Finance"
     >
+
+    <div class="toggle">
+      <input
+        type="checkbox"
+        name="theme"
+        id="switch"
+      >
+      <label
+        for="switch"
+      >
+        Toggle
+      </label>
+    </div>
   </header>
 
   <main class="container">
     <section id="balance">
       <h2 class="sr-only"> 
-        Balanço
+        Swing
       </h2>
 
       <div class="card">
         <h3> 
           <span>
-            Entradas
+            Appetizer
           </span>
           <img 
             src="./assets/income.svg"
@@ -52,7 +70,7 @@
       <div class="card">
         <h3> 
           <span>
-            Saídas
+            Outputs
           </span> 
           <img 
             src="./assets/expense.svg"
@@ -79,7 +97,7 @@
 
     <section id="transaction">
       <h2 class="sr-only">
-        Transações
+        Transactions
       </h2>
 
       <a
@@ -93,9 +111,9 @@
       <table id="data-table">
         <thead>
           <tr>
-            <th> Descrição </th>
-            <th> Valor </th>
-            <th> Data </th>
+            <th> Description </th>
+            <th> Value </th>
+            <th> Date </th>
             <th></th>
           </tr>
         </thead>
@@ -160,7 +178,7 @@
     <div class="modal">
       <div id="form">
         <h2>
-          Nova Transação
+          New Transaction
         </h2>
         <form
           action=""
@@ -171,13 +189,13 @@
               class="sr-only"
               for="description"
             >
-              Descrição
+              Description
             </label>
             <input 
               type="text"
               name="description"
               id="description"
-              placeholder="Descrição"
+              placeholder="Description"
             />
           </div>
 
@@ -186,7 +204,7 @@
               class="sr-only"
               for="amount"
             >
-              Valor
+              Value
             </label>
             <input
               type="number"
@@ -195,7 +213,7 @@
               id="amount"
               placeholder="0,00"
             />
-            <small class="help">Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais </small>
+            <small class="help"> Use the - (negative) sign for expenses and, (comma) for decimal places </small>
           </div>
 
           <div class="input-group">
@@ -203,7 +221,7 @@
               class="sr-only"
               for="date"
             >
-              Data
+              Date
             </label>
             <input 
               type="date"
@@ -219,9 +237,9 @@
               class="button cancel"
               onclick="Modal.close()"
             >
-              Cancelar
+              Cancel
             </a>
-            <button>Salvar</button>
+            <button>Save</button>
           </div>
 
         </form>
